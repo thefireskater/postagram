@@ -9,7 +9,7 @@ from core.auth.serializers.register import RegisterSerializer
 class RegisterViewSet(ViewSet):
     serializer_class = RegisterSerializer
     permission_classes = (AllowAny,)
-    http_method_names = ['post']
+    http_method_names = ['post', 'options']
 
     def create(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
